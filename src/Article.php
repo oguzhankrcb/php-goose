@@ -429,6 +429,29 @@ class Article {
     }
 
     /**
+     * Raw OuterHTML from the top node
+     *
+     * @var string
+     */
+    protected $topNodeOuterHTML;
+
+    /**
+     * @param string $topNodeOuterHTML
+     *
+     * @return self
+     */
+    public function setTopNodeOuterHTML(string $topNodeOuterHTML): self {
+        $this->topNodeOuterHTML = $topNodeOuterHTML;
+
+        return $this;
+    }
+
+    /** @return string */
+    public function getTopNodeOuterHTML(): string {
+        return $this->topNodeOuterHTML;
+    }
+
+    /**
      * DOM Document object
      *
      * @var Document

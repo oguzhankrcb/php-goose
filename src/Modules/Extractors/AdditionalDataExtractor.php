@@ -55,6 +55,7 @@ class AdditionalDataExtractor extends AbstractModule implements ModuleInterface 
             $article->setVideos($this->getVideos());
             $article->setLinks($this->getLinks());
             $article->setPopularWords($this->getPopularWords());
+            $article->setTopNodeOuterHTML($this->getTopNodeOuterHTML());
         }
 
         return $this;
@@ -183,5 +184,13 @@ class AdditionalDataExtractor extends AbstractModule implements ModuleInterface 
         });
 
         return $words;
+    }
+
+    /**
+     * @return string
+     */
+    private function getTopNodeOuterHTML(): string
+    {
+        return $this->article()->getTopNode()->getOuterHtml();
     }
 }
